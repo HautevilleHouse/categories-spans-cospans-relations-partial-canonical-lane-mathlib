@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.CategoriesSpansCospansRelationsPartialCanonicalLaneLean.SpanStructure
+import HautevilleHouse.CategoriesSpansCospansRelationsPartialCanonicalLaneLean.CospanStructure
+import HautevilleHouse.CategoriesSpansCospansRelationsPartialCanonicalLaneLean.RelationStructure
+import HautevilleHouse.CategoriesSpansCospansRelationsPartialCanonicalLaneLean.PartialStructure
+
+namespace HautevilleHouse
+namespace CategoriesSpansCospansRelationsPartialCanonicalLaneLean
+
+def ConstrainedSpanCospanRelationPartialClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_span_cospan_relation_partial_endgame (A : AdmissibleClass) :
+    ConstrainedSpanCospanRelationPartialClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CategoriesSpansCospansRelationsPartialCanonicalLaneLean
+end HautevilleHouse
